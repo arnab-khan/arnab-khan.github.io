@@ -973,7 +973,7 @@ transition-timing-function:linear;
   }
   .projects_list_sec .projects li{
     width: 100%;
-    padding-bottom: 125px;
+    padding: 90px 80px 125px;
   }
   .projects_list_sec .projects li h3{
     font-size: 20px;
@@ -1093,6 +1093,12 @@ transition-timing-function:linear;
     right: 2px;
   }
   /* === end home page === */
+	
+  /* === start projects page === */
+   .projects_list_sec .projects li {
+    padding: 90px 52px 125px;
+   }
+  /* === end projects page === */
 
 }
 /*  ===== end for mibile 2 ===== */
