@@ -1,1 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+// Assuming font.scss defines font-family or variables
+@use './theme/fonts/font.scss' as *; // You can use `as *` to remove the namespace
+
+p {
+    @extend .poppins-400-16-italic;
+}

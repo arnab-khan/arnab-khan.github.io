@@ -1,0 +1,94 @@
+// Import the list module for updated functions
+@use 'sass:list';
+
+// Define font weights and corresponding file names
+$font-variations: (
+    'Thin': 100,
+    'ThinItalic': 100 italic,
+    'ExtraLight': 200,
+    'ExtraLightItalic': 200 italic,
+    'Light': 300,
+    'LightItalic': 300 italic,
+    'Regular': 400,
+    'Italic': 400 italic,
+    'Medium': 500,
+    'MediumItalic': 500 italic,
+    'SemiBold': 600,
+    'SemiBoldItalic': 600 italic,
+    'Bold': 700,
+    'BoldItalic': 700 italic,
+    'ExtraBold': 800,
+    'ExtraBoldItalic': 800 italic,
+    'Black': 900,
+    'BlackItalic': 900 italic
+);
+
+// Define font sizes as an array
+$font-sizes: (
+    12,
+    14,
+    16,
+    18,
+    20,
+    22,
+    24,
+    26,
+    28,
+    30,
+    32,
+    34,
+    36,
+    38,
+    40
+);
+
+$font-family-name:'poppins';
+// Loop through font variations
+@each $name, $weight-style in $font-variations {
+
+    // Define font-face
+    @font-face {
+        font-family: $font-family-name;
+        src: url('../../../public/fonts/Poppins/Poppins-#{$name}.ttf');
+        font-weight: list.nth($weight-style, 1); // Extract weight
+        font-style: if(list.length($weight-style) > 1, list.nth($weight-style, 2), normal); // Extract style
+    }
+
+    // Loop through font sizes for each font variation
+    @each $size in $font-sizes {
+        // Extract font weight and style
+        $weight: list.nth($weight-style, 1);
+        $style: if(list.length($weight-style) > 1, list.nth($weight-style, 2), normal);
+
+        // Generate class name
+        $class-name: '.#{$font-family-name}-#{$weight}-#{$size}';
+
+        // Append '-italic' if the style is italic, otherwise omit it
+        @if $style =='italic' {
+            $class-name: #{$class-name}-italic;
+        }
+
+        // Generate the class
+        #{$class-name} {
+            font-family: $font-family-name;
+            font-weight: #{$weight};
+            font-style: #{$style};
+            font-size: #{$size}px;
+        }
+    }
+}
+
+/* Example font clacess:
+    .poppins-400-16 {
+        font-family: "Poppins";
+        font-weight: 400;
+        font-style: normal;
+        font-size: 16px;
+    }
+    .poppins-400-16-italic {
+        font-family: "Poppins";
+        font-weight: 400;
+        font-style: normal;
+        font-size: 16px;
+    }
+*/
