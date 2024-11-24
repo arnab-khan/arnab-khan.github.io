@@ -1,4 +1,18 @@
-<app-header></app-header>
-<app-main></app-main>
-<app-footer></app-footer>
-<app-side-nav></app-side-nav>
+<div class="position-relative">
+    <header class="position-sticky top-0">
+        <app-header></app-header>
+    </header>
+    <div>
+        <div>
+            <div>
+                <router-outlet></router-outlet>
+            </div>
+            <footer>
+                <app-footer></app-footer>
+            </footer>
+        </div>
+        <nav>
+            <app-side-nav></app-side-nav>
+        </nav>
+    </div>
+</div>

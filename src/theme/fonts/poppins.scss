@@ -1,5 +1,5 @@
-// Import the list module for updated functions
 @use 'sass:list';
+@use "sass:math";
 
 // Define font weights and corresponding file names
 $font-variations: (
@@ -61,7 +61,7 @@ $font-family-name:'poppins';
         $style: if(list.length($weight-style) > 1, list.nth($weight-style, 2), normal);
 
         // Generate class name
-        $class-name: '.#{$font-family-name}-#{$weight}-#{$size}';
+        $class-name: '.font-#{$font-family-name}-#{$weight}-#{$size}';
 
         // Append '-italic' if the style is italic, otherwise omit it
         @if $style =='italic' {
@@ -73,19 +73,20 @@ $font-family-name:'poppins';
             font-family: $font-family-name;
             font-weight: #{$weight};
             font-style: #{$style};
-            font-size: #{$size}px;
+            font-size: #{math.div($size, 16)}rem; // font size in rem
+            // font-size: calc(#{$size} * (0.125vw + 13.6px) / 16); // responsive font: font size 16px for 1920px screen will reduce to 14px for 320px screen
         }
     }
 }
 
 /* Example font clacess:
-    .poppins-400-16 {
+    .font-poppins-400-16 {
         font-family: "Poppins";
         font-weight: 400;
         font-style: normal;
         font-size: 16px;
     }
-    .poppins-400-16-italic {
+    .font-poppins-400-16-italic {
         font-family: "Poppins";
         font-weight: 400;
         font-style: normal;

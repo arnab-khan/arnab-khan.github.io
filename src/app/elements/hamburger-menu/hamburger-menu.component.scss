@@ -1,0 +1,34 @@
+.hamburger-menu {
+    padding-top: 100%;
+    .lines {
+        .line {
+            height: 20%;
+            background-color: black;
+            transition-duration: .3s;
+            &.line-1{
+                transform-origin: left center;
+            }
+            &.line-3{
+                transform-origin: left center;
+            }
+            &.line-2{
+                transform-origin: center;
+            }
+        }
+    }
+    &.opened {
+        .lines {
+            .line {
+                &.line-1{
+                    transform: rotate(45deg) scaleX(1.14);
+                }
+                &.line-3{
+                    transform: rotate(-45deg) scaleX(1.14);
+                }
+                &.line-2{
+                    transform: scale(0);
+                }
+            }
+        }
+    }
+}

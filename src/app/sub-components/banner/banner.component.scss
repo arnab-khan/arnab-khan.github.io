@@ -1,0 +1,55 @@
+:host {
+    display: block;
+    height: 100%;
+    background-color: #f0f0f0;
+}
+
+.banner-section {
+    .banner-image {
+        perspective: 1000px;
+
+        /* Enables the 3D effect */
+        .left,
+        .right {
+            img {
+                transform: scaleX(2);
+            }
+
+            transition: transform 1s ease-out;
+        }
+
+        .left {
+            img {
+                transform-origin: left;
+            }
+
+            transform-origin: left center;
+        }
+
+        .right {
+            img {
+                transform-origin: right;
+            }
+
+            transform-origin: right center;
+        }
+    }
+
+    &.opened {
+        .banner-image {
+
+            .left,
+            .right {
+                transition: transform 2s ease-in;
+            }
+
+            .left {
+                transform: rotateY(180deg);
+            }
+
+            .right {
+                transform: rotateY(-180deg);
+            }
+        }
+    }
+}
