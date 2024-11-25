@@ -2,10 +2,15 @@ import { afterNextRender, Component, ElementRef, HostListener, inject, OnInit } 
 import { BannerComponent } from '../../sub-components/banner/banner.component';
 import { DataTransferService } from '../../services/data-transfer.service';
 import { CommonModule } from '@angular/common';
+import { AboutMeComponent } from '../../sub-components/about-me/about-me.component';
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, BannerComponent],
+  imports: [
+    CommonModule,
+    BannerComponent,
+    AboutMeComponent
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -20,7 +25,6 @@ export class HomeComponent implements OnInit {
 
   constructor(elementRef: ElementRef) {
     this.headerHeight = this.dataTransferService.header()?.height || 0;
-    console.log(this.headerHeight); // every time change 'myWritableSignal' will log here
     this.hostElement = elementRef.nativeElement;
     afterNextRender({
       write: () => { },
@@ -28,7 +32,7 @@ export class HomeComponent implements OnInit {
         setTimeout(() => {
           this.getScrollPersentage();
           console.log(this.windowInnerHeight);
-          
+
           this.totalScrollHeight = (this.hostElement?.offsetHeight || 0) - this.windowInnerHeight;
         }, 0);
       }
@@ -47,6 +51,6 @@ export class HomeComponent implements OnInit {
     const totalScrollHeight = (this.hostElement?.offsetHeight || 0) - this.windowInnerHeight + this.headerHeight;
     const scrollPosition = window.scrollY;
     this.scrollInPersentage = (scrollPosition / totalScrollHeight) * 100;
-    // console.log(this.scrollInPersentage);
+    // console.log('scrollInPersentage', this.scrollInPersentage);
   }
 }

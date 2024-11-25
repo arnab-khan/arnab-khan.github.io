@@ -1,34 +1,42 @@
-:host {
-    display: block;
-    height: 100%;
-    background-color: #f0f0f0;
-}
-
 .banner-section {
+
     .banner-image {
         perspective: 1000px;
 
-        /* Enables the 3D effect */
         .left,
         .right {
-            img {
-                transform: scaleX(2);
+            // background-image: repeating-radial-gradient(circle, red 20%, blue 40%);
+
+            .image-wrap {
+                img {
+                    transform: scaleX(2);
+                }
             }
 
             transition: transform 1s ease-out;
         }
 
+        $gradientColor: rgb(252, 134, 134) 10%, rgb(106, 106, 253) 20%;
+
         .left {
-            img {
-                transform-origin: left;
+            background-image: repeating-radial-gradient(circle at right, $gradientColor), ;
+
+            .image-wrap {
+                img {
+                    transform-origin: left;
+                }
             }
 
             transform-origin: left center;
         }
 
         .right {
-            img {
-                transform-origin: right;
+            background-image: repeating-radial-gradient(circle at left, $gradientColor), ;
+
+            .image-wrap {
+                img {
+                    transform-origin: right;
+                }
             }
 
             transform-origin: right center;

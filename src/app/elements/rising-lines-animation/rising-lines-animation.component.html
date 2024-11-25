@@ -1,0 +1,29 @@
+<div class="overflow-hidden position-relative h-100 w-100 rising-lines-animation-section-wrap">
+    <div class="h-100 w-100 position-absolute top-0 start-50 translate-middle-x rising-lines-animation-section"
+        [ngClass]="{'opacity-0':scrollPercentage>100}">
+        <div class="w-100 h-100 position-absolute top-100 lines">
+            <div class="d-flex justify-content-around w-100 h-100">
+                @for (line of lines; track $index) {
+                <div [ngStyle]="{transform: 'translateY('+line?.position+'vh)'}">
+                    <span class="d-block line"
+                        [ngStyle]="{transform: 'translateY(-'+(line?.speed||0)*scrollPercentage+'vh)'}">
+                    </span>
+                </div>
+                }
+            </div>
+            <div [ngStyle]="{transform: 'translateY('+70+'vh)'}">
+                @for (itemRow of generateArray(4); let rowIndex = $index; track $index) {
+                <div class="d-flex w-100 h-100"
+                    [ngClass]="rowIndex%2==0?'justify-content-evenly':'justify-content-around'">
+                    @for (line of lines;; let lineIndex = $index; track $index) {
+                    <div [ngStyle]="{transform: 'translateY('+(lineIndex%2==0?50:0)+'vh)'}">
+                        <span class="d-block line" [ngStyle]="{transform: 'translateY(-'+(2.5)*scrollPercentage+'vh)'}">
+                        </span>
+                    </div>
+                    }
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+.rising-lines-animation-section {
+    min-width: 1200px;
+    transition-duration: .5s;
+    .lines {
+        .line {
+            width: .2vw;
+            min-width: .2rem;
+            height: 20vh;
+            background-image: linear-gradient(to top, rgb(255, 0, 128, .1), #ff0080, #8000ff);
+        }
+    }
+}

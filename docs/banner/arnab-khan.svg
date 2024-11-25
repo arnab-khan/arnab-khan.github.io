@@ -13,6 +13,10 @@
             <stop offset="0%" stop-color="#FFD700" /> <!-- Gold -->
             <stop offset="100%" stop-color="#FF4500" /> <!-- Orange -->
         </linearGradient>
+        <linearGradient id="textGradientReverse" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#FF4500" />
+            <stop offset="100%" stop-color="#FFD700" />
+        </linearGradient>
     </defs>
 
     <!-- ARNAB Outline (Black) -->
@@ -34,7 +38,7 @@
     </text>
 
     <!-- KHAN with Gradient Fill -->
-    <text x="215" y="120" font-size="30" font-family="Arial, sans-serif" font-weight="bold" fill="url(#textGradient)"
+    <text x="215" y="120" font-size="30" font-family="Arial, sans-serif" font-weight="bold" fill="url(#textGradientReverse)"
         text-anchor="middle" dominant-baseline="middle" letter-spacing="1">
         KHAN
     </text>

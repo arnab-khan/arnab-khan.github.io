@@ -1,10 +1,15 @@
-<div class="h-100 w-100 d-flex align-items-center justify-content-center px-3 banner-section" [ngClass]="addClassBasedPosition()">
-    <div class="d-flex overflow-hidden container-1 h-75 banner-image">
-        <div class="w-50 position-relative overflow-hidden left">
-            <img src="banner/arnab-khan.svg" alt="arnab-khan-banner" class="position-absolute h-100 w-100">
+<div class="h-100 w-100 d-flex align-items-center justify-content-center banner-section"
+    [ngClass]="addClassBasedPosition()">
+    <div class="d-flex overflow-hidden w-100 h-100 banner-image">
+        <div class="w-50 position-relative overflow-hidden ps-3 left">
+            <div class="ms-auto container-1-half overflow-hidden h-100 position-relative image-wrap">
+                <img src="banner/arnab-khan.svg" alt="arnab-khan-banner" class="position-absolute h-100 w-100">
+            </div>
         </div>
-        <div class="w-50 position-relative overflow-hidden right">
-            <img src="banner/arnab-khan.svg" alt="arnab-khan-banner" class="position-absolute h-100 w-100">
+        <div class="w-50 position-relative overflow-hidden pe-3 right">
+            <div class="me-auto container-1-half overflow-hidden h-100 position-relative image-wrap">
+                <img src="banner/arnab-khan.svg" alt="arnab-khan-banner" class="position-absolute h-100 w-100">
+            </div>
         </div>
     </div>
 </div>

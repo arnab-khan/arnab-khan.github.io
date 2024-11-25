@@ -9,6 +9,6 @@ export class ScrollService {
     const total = (scrollInformation?.end || 0) - (scrollInformation?.start || 0);
     const currentScroll = (scrollInformation?.currentPosition || 0) - (scrollInformation?.start || 0);
     const scrollPersentage = (currentScroll / total) * 100;
-    return scrollPersentage
+    return scrollPersentage;
   }
 }

@@ -72,6 +72,11 @@ strong {
     max-width: 100%;
 }
 
+.container-1-half {
+    width: calc((50vw + 40rem)/2);
+    max-width: 100%;
+}
+
 .container-2 {
     width: calc(7vw + 40rem);
     max-width: 100%;
@@ -85,13 +90,19 @@ strong {
     pointer-events: none;
 }
 
+.opacity-0 {
+    opacity: 0;
+}
+
 // ==================== End common classes ====================
 
 
 
 html {
     font-size: calc(0.125vw + 13.6px); // responsive font size 1rem = 16px for 1920px screen and 1rem = 14px for 320px screen
+
     body {
         font: inherit;
-        font-size: inherit;}
+        font-size: inherit;
+    }
 }
