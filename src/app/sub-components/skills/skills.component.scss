@@ -1,0 +1,37 @@
+.card-inner {
+    background-color: #1e1e1e;
+    transition-duration: 1s;
+
+    $boxShadow: 0 0 20px 4px;
+
+    .card-outline-before {
+        box-shadow: $boxShadow #1e90ff;
+        border: 3px solid #1e90ff;
+    }
+
+    .card-outline-current {
+        box-shadow: $boxShadow #32cd32;
+        border: 3px solid #32cd32;
+    }
+
+    .card-outline-after {
+        box-shadow: $boxShadow #ff6f61;
+        border: 3px solid #ff6f61;
+    }
+
+    @media (max-width: 768px) {
+        $boxShadow: 0 0 10px 2px;
+
+        .card-outline-before {
+            box-shadow: $boxShadow #1e90ff;
+        }
+
+        .card-outline-current {
+            box-shadow: $boxShadow #32cd32;
+        }
+
+        .card-outline-after {
+            box-shadow: $boxShadow #ff6f61;
+        }
+    }
+}

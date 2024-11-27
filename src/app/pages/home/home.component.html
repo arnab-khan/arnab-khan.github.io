@@ -7,4 +7,12 @@
         class="d-block position-absolute w-100 h-100 top-0 start-0"
         [ngClass]="{'pointer-events-none':(scrollInPersentage>5)}">
     </app-banner>
+    <app-skills [scrollInformation]="{start:30, end:60, currentPosition:scrollInPersentage}" [skills]="skills"
+        [ngClass]="{'pointer-events-none':(scrollInPersentage<30||scrollInPersentage>60)}"
+        class="d-block position-absolute w-100 h-100 top-0 start-0">
+    </app-skills>
+    <app-work-experience [scrollInformation]="{start:60, end:80, currentPosition:scrollInPersentage}"
+        [ngClass]="{'pointer-events-none':(scrollInPersentage<30||scrollInPersentage>60)}"
+        class="d-block position-absolute w-100 h-100 top-0 start-0">
+    </app-work-experience>
 </div>

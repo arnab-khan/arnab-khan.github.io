@@ -17,18 +17,7 @@ export class AboutMeComponent {
   scrollPersentage = 0;
   ngOnChanges(changes: SimpleChanges): void {
     if (changes?.['scrollInformation']) {
-      console.log(this.scrollService.calculateAvaiableScrollPercentage(this.scrollInformation));
-      
       this.scrollPersentage = this.scrollService.calculateAvaiableScrollPercentage(this.scrollInformation);
     }
-    console.log(this.scrollPersentage);
-    
-  }
-
-  addClassBasedPosition() {
-    if (this.scrollPersentage > 0) {
-      return 'opened';
-    } 
-    return '';
   }
 }
