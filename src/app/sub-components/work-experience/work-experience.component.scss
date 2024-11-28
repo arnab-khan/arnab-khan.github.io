@@ -1,0 +1,26 @@
+.heading {
+    .gradient-text-wrap {
+        .gradient-text {
+            background-image: repeating-linear-gradient(to right, red, orange, yellowgreen);
+            background-size: 100% 100%;
+            -moz-background-clip: text;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    }
+}
+.content {
+    .text {
+        .gradient-text-wrap {
+            .gradient-text {
+                background-image: repeating-linear-gradient(to bottom, red, orange, yellowgreen);
+                background-size: 100% 100%;
+                -moz-background-clip: text;
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+            }
+        }
+    }
+}

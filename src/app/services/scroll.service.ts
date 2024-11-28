@@ -24,4 +24,9 @@ export class ScrollService {
       return Math.max(opacity, 0)
     }
   }
+
+  setSizeInPersentage(minScrollPersentage: number, maxScrollPersentage: number, scrollPersentage: number): number {
+    const heightInPersentage = ((scrollPersentage - minScrollPersentage) / (maxScrollPersentage - minScrollPersentage)) * 100;
+    return Math.min(Math.max(heightInPersentage, 0), 100);
+  }
 }

@@ -1,7 +1,51 @@
-<section class="bg-dark w-100 h-100" [ngStyle]="{'opacity':sectionOpecity}">
-    <div class="container-2 pt-4 mx-auto d-flex mh-100 flex-column position-relative text-white">
-        <h2 class="font-abrilfatface-400-22 flex-shrink-0 px-3 text-center">Work Experience</h2>
-        <div class="flex-shrink-1 overflow-auto py-4 py-md-5 px-3 px-sm-4 px-md-5">
+<section class="bg-dark w-100 h-100 d-flex align-items-center" [ngStyle]="{'opacity':sectionOpecity}">
+    <div *ngIf="scrollPersentage>10" class="container-2 pt-4 mx-auto d-flex mh-100 flex-column text-white"
+        [ngStyle]="{'opacity':contentOpecity}">
+        <div class="flex-shrink-0 px-3">
+            <h2 class="font-abrilfatface-400-22 d-block mx-auto position-relative width-fit-content heading">
+                <span class="d-block normal-text-wrap">
+                    <span class="d-block text-white text-nowrap normal-text">
+                        <ng-container *ngTemplateOutlet="headingTemplate"></ng-container>
+                    </span>
+                </span>
+                <span class="d-block position-absolute top-0 start-0 h-100 bg-dark overflow-hidden gradient-text-wrap"
+                    [ngStyle]="{'width':gradientContentSize}">
+                    <span class="d-block text-nowrap gradient-text">
+                        <ng-container *ngTemplateOutlet="headingTemplate"></ng-container>
+                    </span>
+                </span>
+            </h2>
+        </div>
+        <div class="flex-shrink-1 overflow-auto mt-4 px-3 px-sm-4 px-md-5 content">
+            <p class="position-relative text">
+                <span class="d-block normal-text-wrap">
+                    <span class="d-block text-white normal-text">
+                        <ng-container *ngTemplateOutlet="textTemplate"></ng-container>
+                    </span>
+                </span>
+                <span class="d-block position-absolute top-0 start-0 w-100 bg-dark overflow-hidden gradient-text-wrap"
+                    [ngStyle]="{'height':gradientContentSize}">
+                    <span class="d-block gradient-text">
+                        <ng-container *ngTemplateOutlet="textTemplate"></ng-container>
+                    </span>
+                </span>
+            </p>
+            <ng-template #headingTemplate>
+                Work Experience
+            </ng-template>
+            <ng-template #textTemplate>
+                I have over 2 years of experience working at Platform Common Organization. My journey began with an
+                internship from April 11, 2022, to November 30, 2022, and I transitioned to a full-time role on December
+                1, 2022, continuing to the present.
+                <br><br> I have been part of the Volunteer Management System (VMS) group as a Frontend Angular Web
+                Developer,
+                working on both the user and admin sides of the application. I have been involved in this project since
+                the very beginning.
+                <br><br> This application is used by multiple clients, and we implemented customizations based on their
+                specific
+                requirements. Additionally, the application allows clients to easily make many changes themselves
+                through the admin panel.
+            </ng-template>
         </div>
     </div>
 </section>

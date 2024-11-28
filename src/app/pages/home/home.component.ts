@@ -7,6 +7,9 @@ import { SkillsComponent } from '../../sub-components/skills/skills.component';
 import { ApisService } from '../../services/apis.service';
 import { Skill } from '../../interfaces/skills';
 import { WorkExperienceComponent } from '../../sub-components/work-experience/work-experience.component';
+import { PersonalProjectComponent } from '../../sub-components/personal-project/personal-project.component';
+import { PersonalProject } from '../../interfaces/personal-project';
+import { forkJoin } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +18,8 @@ import { WorkExperienceComponent } from '../../sub-components/work-experience/wo
     BannerComponent,
     AboutMeComponent,
     SkillsComponent,
-    WorkExperienceComponent
+    WorkExperienceComponent,
+    PersonalProjectComponent
   ],
   providers: [ApisService],
   templateUrl: './home.component.html',
@@ -31,6 +35,7 @@ export class HomeComponent implements OnInit {
   headerHeight = 0;
   windowInnerHeight = 0;
   skills: Skill[] = [];
+  personalProject: PersonalProject[] = [];
 
   constructor(elementRef: ElementRef) {
     this.headerHeight = this.dataTransferService.header()?.height || 0;
@@ -40,8 +45,6 @@ export class HomeComponent implements OnInit {
       read: () => {
         setTimeout(() => {
           this.getScrollPersentage();
-          console.log(this.windowInnerHeight);
-
           this.totalScrollHeight = (this.hostElement?.offsetHeight || 0) - this.windowInnerHeight;
         }, 0);
       }
@@ -65,10 +68,17 @@ export class HomeComponent implements OnInit {
   }
 
   getDataByApi() {
-    this.apisService.getJson<Skill[]>('json/skills').subscribe({
-      next: (response: Skill[]) => {
+    const skillApi = this.apisService.getJson<Skill[]>('json/skills');
+    const personalProjectApi = this.apisService.getJson<PersonalProject[]>('json/personal-project');
+    const mergeApi = forkJoin({
+      skillApi: skillApi,
+      personalProjectApi: personalProjectApi
+    })
+    mergeApi.subscribe({
+      next: response => {
         console.log('skills', response);
-        this.skills = response;
+        this.skills = response.skillApi;
+        this.personalProject = response.personalProjectApi;
       },
       error: (error: any) => {
         console.error('error', error);
