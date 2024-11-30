@@ -1,7 +1,7 @@
 <div class="position-sticky bg-light"
     [ngStyle]="{'top':headerHeight+'px', 'height':'calc('+windowInnerHeight+'px - '+headerHeight+'px)'}">
     <app-about-me [scrollInformation]="{start:2, end:30, currentPosition:scrollInPersentage}"
-        class="d-block position-absolute w-100 h-100 top-0 start-0">
+        class="d-block position-absolute w-100 h-100 top-0 start-0"[ngClass]="{'pointer-events-none':(scrollInPersentage<2||scrollInPersentage>30)}">
     </app-about-me>
     <app-banner [scrollInformation]="{start:1, end:2, currentPosition:scrollInPersentage}"
         class="d-block position-absolute w-100 h-100 top-0 start-0"
@@ -11,9 +11,12 @@
         [ngClass]="{'pointer-events-none':(scrollInPersentage<30||scrollInPersentage>60)}"
         class="d-block position-absolute w-100 h-100 top-0 start-0">
     </app-skills>
-    <app-work-experience [scrollInformation]="{start:60, end:100, currentPosition:scrollInPersentage}"
-        [ngClass]="{'pointer-events-none':(scrollInPersentage<60||scrollInPersentage>100)}"
+    <app-work-experience [scrollInformation]="{start:60, end:90, currentPosition:scrollInPersentage}"
+        [ngClass]="{'pointer-events-none':(scrollInPersentage<60||scrollInPersentage>90)}"
         class="d-block position-absolute w-100 h-100 top-0 start-0">
     </app-work-experience>
-    <app-personal-project></app-personal-project>
+    <app-personal-project [scrollInformation]="{start:90, end:100, currentPosition:scrollInPersentage}"
+        [personalProject]="personalProject"
+        [ngClass]="{'pointer-events-none':(scrollInPersentage<90)}">
+    </app-personal-project>
 </div>

@@ -1,7 +1,7 @@
 import { Component, HostListener, inject, Input, SimpleChanges } from '@angular/core';
 import { ScrollInformation } from '../../interfaces/scroll';
 import { ScrollService } from '../../services/scroll.service';
-import { Skill } from '../../interfaces/skills';
+import { Skill } from '../../interfaces/skill';
 import { CommonModule } from '@angular/common';
 
 @Component({

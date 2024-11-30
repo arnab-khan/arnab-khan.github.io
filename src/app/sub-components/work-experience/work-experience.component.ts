@@ -1,4 +1,4 @@
-import { Component, inject, Input, SimpleChanges } from '@angular/core';
+import { Component, inject, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { ScrollInformation } from '../../interfaces/scroll';
 import { ScrollService } from '../../services/scroll.service';
 import { CommonModule } from '@angular/common';
@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './work-experience.component.html',
   styleUrl: './work-experience.component.scss'
 })
-export class WorkExperienceComponent {
+export class WorkExperienceComponent implements OnChanges {
   scrollService = inject(ScrollService);
 
   @Input() scrollInformation: ScrollInformation = {};
@@ -22,8 +22,11 @@ export class WorkExperienceComponent {
   ngOnChanges(changes: SimpleChanges): void {
     if (changes?.['scrollInformation']) {
       this.scrollPersentage = this.scrollService.calculateAvaiableScrollPercentage(this.scrollInformation);
-      if (this.scrollPersentage >= 40 && this.scrollPersentage <= 90) {
-        this.gradientContentSize = this.setSize(40, 90);
+      if (this.scrollPersentage >= 90 && this.scrollPersentage <= 100) {
+        this.contentOpecity = (1-this.setOpacity(90, 100));
+      }
+      if (this.scrollPersentage >= 20 && this.scrollPersentage <= 90) {
+        this.gradientContentSize = this.setSize(20, 90);
       }
       if (this.scrollPersentage >= 10 && this.scrollPersentage <= 40) {
         this.contentOpecity = this.setOpacity(10, 40);

@@ -5,11 +5,11 @@ import { CommonModule } from '@angular/common';
 import { AboutMeComponent } from '../../sub-components/about-me/about-me.component';
 import { SkillsComponent } from '../../sub-components/skills/skills.component';
 import { ApisService } from '../../services/apis.service';
-import { Skill } from '../../interfaces/skills';
+import { Skill } from '../../interfaces/skill';
 import { WorkExperienceComponent } from '../../sub-components/work-experience/work-experience.component';
-import { PersonalProjectComponent } from '../../sub-components/personal-project/personal-project.component';
 import { PersonalProject } from '../../interfaces/personal-project';
 import { forkJoin } from 'rxjs';
+import { PersonalProjectComponent } from '../../sub-components/personal-project/personal-project.component';
 
 @Component({
   selector: 'app-home',
@@ -76,11 +76,11 @@ export class HomeComponent implements OnInit {
     })
     mergeApi.subscribe({
       next: response => {
-        console.log('skills', response);
+        console.log('home data', response);
         this.skills = response.skillApi;
         this.personalProject = response.personalProjectApi;
       },
-      error: (error: any) => {
+      error: error => {
         console.error('error', error);
       }
     })

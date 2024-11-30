@@ -9,6 +9,8 @@
             "Webpack",
             "Firebase"
         ],
+        "live": "https://arnab-khan.github.io/typescript-project-setup/#card-list",
+        "sourceCode": "https://github.com/arnab-khan/typescript-project-setup",
         "Description": "This is a single-page application developed without using any traditional frameworks or libraries. I implemented a custom single-page router. The application allows users to create, edit, and delete individual cards."
     },
     {
@@ -21,6 +23,8 @@
             "Angular",
             "ngx-monaco-editor"
         ],
+        "live": "https://arnab-khan.github.io/css-grid",
+        "sourceCode": "https://github.com/arnab-khan/css-grid",
         "Description": "This is a CSS tutorial focused on the grid layout system. It includes a search functionality and examples for each topic. Users can edit and execute example code in real-time using an integrated code editor."
     }
 ]

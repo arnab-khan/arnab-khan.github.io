@@ -1,1 +1,59 @@
-<p>personal-project works!</p>
+<section class="bg-dark w-100 h-100 d-flex align-items-center" [ngStyle]="{'opacity':sectionOpecity}">
+    <div class="container-1 pt-4 mx-auto d-flex mh-100 flex-column position-relative text-white">
+        <h2 class="font-abrilfatface-400-22 flex-shrink-0 px-3 text-center">Personal Project</h2>
+        <div class="flex-shrink-1 overflow-auto py-4 py-md-5 px-3 px-sm-4 px-md-5">
+            <ul
+                class="row row-cols-1 row-cols-lg-2 row-cols-xl-3 row-cols-xxl-4 justify-content-center gy-4 gy-md-5 gx-3 gx-sm-4 gx-md-5">
+                @for (project of personalProject; track $index) {
+                <li>
+                    <div class="position-relative h-100 p-3 rounded-3 card-inner">
+                        <h3 class="font-poppins-600-18 color-darkorange text-center">
+                            {{project.name}}
+                        </h3>
+                        <div class="position-relative w-100 mt-3 image-wrap">
+                            <div class="position-absolute top-0 start-0 h-100 w-100 image">
+                                <img [src]="project.image" [alt]="project.name"
+                                    class="h-100 mw-100 w-auto mx-auto d-block">
+                            </div>
+                        </div>
+                        <div class="ps-3 mt-3 technologies">
+                            <span class="font-poppins-600-16 color-aqua ms-n3">
+                                Technologies: &nbsp;
+                            </span>
+                            <span class="font-poppins-400-16">
+                                {{project.Technologies.join(', ')}}.
+                            </span>
+                        </div>
+                        <div class="ps-3 mt-3 description">
+                            <span class="font-poppins-600-16 color-aqua ms-n3">
+                                Description: &nbsp;
+                            </span>
+                            <span class="font-poppins-400-16">
+                                {{project.Description}}
+                            </span>
+                        </div>
+                        <div class="ps-3 mt-3 source-code">
+                            <span class="font-poppins-600-16 color-aqua ms-n3">
+                                Source code: &nbsp;
+                            </span>
+                            <br>
+                            <a [href]="project.sourceCode" target="_blank" class="font-poppins-400-16">
+                                {{project.sourceCode}}
+                            </a>
+                        </div>
+                        <div class="ps-3 mt-3 live">
+                            <span class="font-poppins-600-16 color-aqua ms-n3">
+                                Live: &nbsp;
+                            </span>
+                            <br>
+                            <a [href]="project.live" target="_blank" class="font-poppins-400-16">
+                                {{project.live}}
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                }
+            </ul>
+        </div>
+    </div>
+</section>
