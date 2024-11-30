@@ -7,4 +7,13 @@
     .logo {
         height: 2rem;
     }
+    .links{
+        .link{
+            .content{
+                &:hover{
+                    color: #0000ff !important;
+                }
+            }
+        }
+    }
 }

@@ -1,5 +1,5 @@
 <section class="bg-dark w-100 h-100 d-flex align-items-center" [ngStyle]="{'opacity':sectionOpecity}">
-    <div class="container-2 pt-4 mx-auto d-flex mh-100 flex-column position-relative text-white">
+    <div class="container-2 py-4 mx-auto d-flex mh-100 flex-column position-relative text-white">
         <h2 class="font-abrilfatface-400-22 flex-shrink-0 px-3 text-center">Skills</h2>
         <div class="flex-shrink-1 overflow-auto py-4 py-md-5 px-3 px-sm-4 px-md-5">
             <ul class="row row-cols-2 row-cols-lg-3 row-cols-xxl-4 gy-4 gy-md-5 gx-3 gx-sm-4 gx-md-5">
@@ -10,7 +10,7 @@
                             <h3 class="font-poppins-400-16 text-white">
                                 {{skill.name}}
                             </h3>
-                            <img [src]="skill.logo" [alt]="skill.name" class="mt-2">
+                            <img [src]="skill.logo" [alt]="skill.name" class="mt-2 skill-logo">
                         </div>
                         <div class="position-absolute top-0 start-0 h-100 w-100 rounded-3 card-outline-before"
                             [ngStyle]="{'opacity':cardOutlineBeforeOpecity}">

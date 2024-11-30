@@ -34,4 +34,10 @@
             box-shadow: $boxShadow #ff6f61;
         }
     }
+
+    .skill-logo {
+        $size: 2.5rem;
+        height: $size;
+        width: $size;
+    }
 }

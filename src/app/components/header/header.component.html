@@ -1,8 +1,29 @@
-<div class="header-section px-4 py-3">
-    <div class="container-1 mx-auto row row-cols-auto align-items-center">
+<div class="header-section px-3 px-lg-4 px-xxl-5 py-3 bg-danger-subtle">
+    <nav class="container-1 mx-auto row row-cols-auto align-items-center justify-content-between">
         <div class="flex-shrink-0">
-            <app-hamburger-menu></app-hamburger-menu>
+            <div class="d-none">
+                <app-hamburger-menu></app-hamburger-menu>
+            </div>
+            <a routerLink="/home">
+                <img src="logo/arnab-khan.svg" alt="Arnab Khan Logo" class="logo">
+            </a>
         </div>
-        <img src="logo/arnab-khan.svg" alt="Arnab Khan Logo" class="flex-shrink-0 logo">
-    </div>
+        <ul class="row row-cols-auto gx-lg-4 gx-xxl-5 flex-shrink-1 links">
+            <li class="link">
+                <a routerLink="/home" routerLinkActive="text-decoration-underline" class="font-poppins-600-18 text-primary content">
+                    Home
+                </a>
+            </li>
+            <li class="link">
+                <a routerLink="/work" routerLinkActive="text-decoration-underline" class="font-poppins-600-18 text-primary content">
+                    Work
+                </a>
+            </li>
+            <li class="link">
+                <a routerLinkActive="text-decoration-underline" class="font-poppins-600-18 text-primary content">
+                    Resume
+                </a>
+            </li>
+        </ul>
+    </nav>
 </div>

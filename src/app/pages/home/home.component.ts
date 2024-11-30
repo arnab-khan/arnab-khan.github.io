@@ -1,4 +1,4 @@
-import { afterNextRender, Component, ElementRef, HostListener, inject, OnInit } from '@angular/core';
+import { afterNextRender, Component, effect, ElementRef, HostListener, inject, OnInit, ViewChild } from '@angular/core';
 import { BannerComponent } from '../../sub-components/banner/banner.component';
 import { DataTransferService } from '../../services/data-transfer.service';
 import { CommonModule } from '@angular/common';
@@ -26,10 +26,13 @@ import { PersonalProjectComponent } from '../../sub-components/personal-project/
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {
+
+  @ViewChild('scrollAnimationWrapper') scrollAnimationWrapper!: ElementRef;
+
   dataTransferService = inject(DataTransferService);
   apisService = inject(ApisService);
 
-  hostElement: HTMLElement | undefined;
+  scrollAnimationWrapperElement: HTMLElement | undefined;
   totalScrollHeight = 0;
   scrollInPersentage = 0;
   headerHeight = 0;
@@ -37,15 +40,18 @@ export class HomeComponent implements OnInit {
   skills: Skill[] = [];
   personalProject: PersonalProject[] = [];
 
-  constructor(elementRef: ElementRef) {
-    this.headerHeight = this.dataTransferService.header()?.height || 0;
-    this.hostElement = elementRef.nativeElement;
+  constructor() {
+    effect(() => {
+      this.headerHeight = this.dataTransferService.header()?.height || 0;
+    })
+
     afterNextRender({
       write: () => { },
       read: () => {
         setTimeout(() => {
+          this.scrollAnimationWrapperElement = this.scrollAnimationWrapper.nativeElement;
           this.getScrollPersentage();
-          this.totalScrollHeight = (this.hostElement?.offsetHeight || 0) - this.windowInnerHeight;
+          this.totalScrollHeight = (this.scrollAnimationWrapperElement?.offsetHeight || 0) - this.windowInnerHeight;
         }, 0);
       }
     });
@@ -61,10 +67,15 @@ export class HomeComponent implements OnInit {
   }
   getScrollPersentage() {
     this.windowInnerHeight = window.innerHeight;
-    const totalScrollHeight = (this.hostElement?.offsetHeight || 0) - this.windowInnerHeight + this.headerHeight;
+    const totalScrollHeight = (this.scrollAnimationWrapperElement?.offsetHeight || 0) - this.windowInnerHeight + this.headerHeight;
     const scrollPosition = window.scrollY;
     this.scrollInPersentage = (scrollPosition / totalScrollHeight) * 100;
-    console.log('scrollInPersentage', this.scrollInPersentage);
+    // console.log('scrollInPersentage', this.scrollInPersentage);
+  }
+
+  @HostListener('window:resize', [])
+  onResize() {
+    this.windowInnerHeight = window.innerHeight;
   }
 
   getDataByApi() {
@@ -76,7 +87,7 @@ export class HomeComponent implements OnInit {
     })
     mergeApi.subscribe({
       next: response => {
-        console.log('home data', response);
+        // console.log('home data', response);
         this.skills = response.skillApi;
         this.personalProject = response.personalProjectApi;
       },

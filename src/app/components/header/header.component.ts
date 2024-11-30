@@ -1,10 +1,11 @@
 import { afterNextRender, afterRender, Component, ElementRef, HostListener, inject } from '@angular/core';
 import { HamburgerMenuComponent } from '../../elements/hamburger-menu/hamburger-menu.component';
 import { DataTransferService } from '../../services/data-transfer.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
-  imports: [HamburgerMenuComponent],
+  imports: [HamburgerMenuComponent, RouterModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })

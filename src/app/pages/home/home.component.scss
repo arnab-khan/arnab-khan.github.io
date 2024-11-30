@@ -1,5 +1,12 @@
-:host{
-    height: 1000vh;
+:host {
     display: block;
     position: relative;
+
+    .scroll-animation-wrapper {
+        height: 1000vh;
+    }
+}
+
+.scroll-indicator{
+    width: 2rem;
 }

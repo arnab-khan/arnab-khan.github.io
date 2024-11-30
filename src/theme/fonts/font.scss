@@ -10,5 +10,20 @@
 }
 
 .color-darkorange {
-    color: darkorange;
+    color: #ff8c00;
+}
+
+.color-khaki {
+    color: #f0e68c;
+}
+
+
+// outline
+
+.text-outline-black-1 {
+    text-shadow:
+        -0.063rem -0.063rem 0 black,
+        0.063rem -0.063rem 0 black,
+        -0.063rem 0.063rem 0 black,
+        0.063rem 0.063rem 0 black;
 }

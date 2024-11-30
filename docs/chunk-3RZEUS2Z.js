@@ -1,0 +1,1 @@
+import{Ha as a,L as e}from"./chunk-QIWJ35CR.js";var r=class t{header=a({});static \u0275fac=function(i){return new(i||t)};static \u0275prov=e({token:t,factory:t.\u0275fac,providedIn:"root"})};export{r as a};

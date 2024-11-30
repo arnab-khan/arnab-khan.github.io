@@ -1,22 +1,29 @@
-<div class="position-sticky bg-light"
-    [ngStyle]="{'top':headerHeight+'px', 'height':'calc('+windowInnerHeight+'px - '+headerHeight+'px)'}">
-    <app-about-me [scrollInformation]="{start:2, end:30, currentPosition:scrollInPersentage}"
-        class="d-block position-absolute w-100 h-100 top-0 start-0"[ngClass]="{'pointer-events-none':(scrollInPersentage<2||scrollInPersentage>30)}">
-    </app-about-me>
-    <app-banner [scrollInformation]="{start:1, end:2, currentPosition:scrollInPersentage}"
-        class="d-block position-absolute w-100 h-100 top-0 start-0"
-        [ngClass]="{'pointer-events-none':(scrollInPersentage>5)}">
-    </app-banner>
-    <app-skills [scrollInformation]="{start:30, end:60, currentPosition:scrollInPersentage}" [skills]="skills"
-        [ngClass]="{'pointer-events-none':(scrollInPersentage<30||scrollInPersentage>60)}"
-        class="d-block position-absolute w-100 h-100 top-0 start-0">
-    </app-skills>
-    <app-work-experience [scrollInformation]="{start:60, end:90, currentPosition:scrollInPersentage}"
-        [ngClass]="{'pointer-events-none':(scrollInPersentage<60||scrollInPersentage>90)}"
-        class="d-block position-absolute w-100 h-100 top-0 start-0">
-    </app-work-experience>
-    <app-personal-project [scrollInformation]="{start:90, end:100, currentPosition:scrollInPersentage}"
-        [personalProject]="personalProject"
-        [ngClass]="{'pointer-events-none':(scrollInPersentage<90)}">
-    </app-personal-project>
+<div #scrollAnimationWrapper class="position-sticky top-0 scroll-animation-wrapper">
+    <div class="position-sticky bg-light"
+        [ngStyle]="{'top':headerHeight+'px', 'height':'calc('+windowInnerHeight+'px - '+headerHeight+'px)'}">
+        <app-about-me [scrollInformation]="{start:2, end:30, currentPosition:scrollInPersentage}"
+            class="d-block position-absolute w-100 h-100 top-0 start-0"
+            [ngClass]="{'pointer-events-none':(scrollInPersentage<2||scrollInPersentage>30)}">
+        </app-about-me>
+        <app-banner [scrollInformation]="{start:1, end:2, currentPosition:scrollInPersentage}"
+            class="d-block position-absolute w-100 h-100 top-0 start-0"
+            [ngClass]="{'pointer-events-none':(scrollInPersentage>5)}">
+        </app-banner>
+        <app-skills [scrollInformation]="{start:30, end:60, currentPosition:scrollInPersentage}" [skills]="skills"
+            [ngClass]="{'pointer-events-none':(scrollInPersentage<30||scrollInPersentage>60)}"
+            class="d-block position-absolute w-100 h-100 top-0 start-0">
+        </app-skills>
+        <app-work-experience [scrollInformation]="{start:60, end:100, currentPosition:scrollInPersentage}"
+            [ngClass]="{'pointer-events-none':(scrollInPersentage<60||scrollInPersentage>100)}"
+            class="d-block position-absolute w-100 h-100 top-0 start-0">
+        </app-work-experience>
+    </div>
+</div>
+<app-personal-project [personalProject]="personalProject">
+</app-personal-project>
+<div *ngIf="scrollInPersentage<=100" class="position-fixed bottom-0 start-50 translate-middle-x">
+    <span class="font-poppins-400-14 color-khaki text-outline-black-1 d-block mx-auto">
+        Scroll down for more
+    </span>
+    <img src="images/icons/scroll-indicator.svg" alt="Scroll indicator" class="d-block mx-auto mt-n2 scroll-indicator">
 </div>
