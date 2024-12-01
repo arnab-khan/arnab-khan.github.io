@@ -1,1 +1,17 @@
-<p>footer works!</p>
+<div class="p-4 footer-section">
+    <div class="container-1 mx-auto">
+        <h2 class="font-abrilfatface-400-22 text-white flex-shrink-0 text-center">Contact</h2>
+        <ul class="d-block mx-auto width-fit-content pt-2 contact-details">
+            @for (contactDetail of contactDetails; track $index) {
+            <li class="mt-2 ps-3 contact-detail">
+                <span class="font-poppins-400-16 text-white ms-n3 label">
+                    {{contactDetail.label}}:
+                </span>
+                <a [href]="contactDetail.url" target="_blank" class="font-poppins-400-16 link">
+                    {{contactDetail.value}}
+                </a>
+            </li>
+            }
+        </ul>
+    </div>
+</div>

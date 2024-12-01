@@ -1,0 +1,15 @@
+.footer-section {
+    background-color: #1c1c1c;
+
+    .contact-details {
+        .contact-detail {
+            .link {
+                color: #b8860b;
+
+                &:hover {
+                    color: #66f;
+                }
+            }
+        }
+    }
+}

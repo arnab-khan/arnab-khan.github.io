@@ -1,7 +1,7 @@
 <section class="bg-dark w-100 h-100">
-    <div class="container-1 pt-4 mx-auto d-flex mh-100 flex-column position-relative text-white">
-        <h2 class="font-abrilfatface-400-22 flex-shrink-0 px-3 text-center">Personal Project</h2>
-        <div class="flex-shrink-1 overflow-auto py-4 py-md-5 px-3 px-sm-4 px-md-5">
+    <div class="container-1 pt-4 mx-auto position-relative text-white">
+        <h2 class="font-abrilfatface-400-22 px-3 text-center">Personal Project</h2>
+        <div class="py-4 py-md-5 px-3 px-sm-4 px-md-5">
             <ul
                 class="row row-cols-1 row-cols-lg-2 row-cols-xl-3 row-cols-xxl-4 justify-content-center gy-5 gx-3 gx-sm-4 gx-md-5">
                 @for (project of personalProject; track $index) {
@@ -54,6 +54,15 @@
                 </li>
                 }
             </ul>
+            <div class="mt-5 text-center">
+                <span class="font-poppins-600-16 color-aqua ms-n3">
+                    Source code of current portfolio: &nbsp;
+                </span>
+                @let portfolioSourceCode = "https://github.com/arnab-khan/arnab-khan.github.io";
+                <a [href]="portfolioSourceCode" target="_blank" class="font-poppins-400-16">
+                    {{portfolioSourceCode}}
+                </a>
+            </div>
         </div>
     </div>
 </section>
