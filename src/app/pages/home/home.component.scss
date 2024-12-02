@@ -4,9 +4,17 @@
 
     .scroll-animation-wrapper {
         height: 1000vh;
+
+        @media screen and (min-width: 768px) and (max-width: 991px) {
+            height: 800vh;
+        }
+
+        @media screen and (max-width: 767px) {
+            height: 600vh;
+        }
     }
 }
 
-.scroll-indicator{
+.scroll-indicator {
     width: 2rem;
 }
