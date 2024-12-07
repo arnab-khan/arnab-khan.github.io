@@ -37,6 +37,7 @@ export class HomeComponent implements OnInit {
   scrollInPersentage = 0;
   headerHeight = 0;
   windowInnerHeight = 0;
+  scrollElementsHeight = 100;
   skills: Skill[] = [];
   personalProject: PersonalProject[] = [];
 
@@ -52,7 +53,10 @@ export class HomeComponent implements OnInit {
           this.scrollAnimationWrapperElement = this.scrollAnimationWrapper.nativeElement;
           this.getScrollPersentage();
           this.totalScrollHeight = (this.scrollAnimationWrapperElement?.offsetHeight || 0) - this.windowInnerHeight;
-          window.dispatchEvent(new Event('resize'));
+          this.scrollElementsHeight++;
+          setTimeout(() => {
+            this.scrollElementsHeight--;
+          }, 0);
         }, 0);
       }
     });
