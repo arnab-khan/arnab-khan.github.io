@@ -5,6 +5,13 @@ import { ScrollInformation } from '../interfaces/scroll';
   providedIn: 'root'
 })
 export class ScrollService {
+
+  /**
+   * Calculates the available scroll percentage based on the current position
+   * within the start and end bounds of a scrollable area.
+   * @param scrollInformation - Contains start, end, and current scroll position.
+   * @returns The scroll percentage, clamped between 0 and 100.
+  */
   calculateAvaiableScrollPercentage(scrollInformation: ScrollInformation): number {
     const total = (scrollInformation?.end || 0) - (scrollInformation?.start || 0);
     const currentScroll = (scrollInformation?.currentPosition || 0) - (scrollInformation?.start || 0);

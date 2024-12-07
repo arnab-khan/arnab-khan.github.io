@@ -11,6 +11,4 @@ import { PersonalProjectComponent } from './sub-components/personal-project/pers
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
-
-}
+export class AppComponent { }

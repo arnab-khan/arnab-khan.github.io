@@ -39,6 +39,7 @@ export class HomeComponent implements OnInit {
   windowInnerHeight = 0;
   skills: Skill[] = [];
   personalProject: PersonalProject[] = [];
+  pageHeight: string = '';
 
   constructor() {
     effect(() => {
@@ -59,6 +60,9 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.windowInnerHeight = window.innerHeight;
     this.getDataByApi();
+    setTimeout(() => {
+      this.pageHeight = '100vh';
+    }, 0);
   }
 
   @HostListener('window:scroll', [])
