@@ -38,6 +38,7 @@ export class HomeComponent implements OnInit {
   headerHeight = 0;
   windowInnerHeight = 0;
   scrollElementsHeight = 100;
+  scrollAnimationWrapperHeight='none';
   skills: Skill[] = [];
   personalProject: PersonalProject[] = [];
 
@@ -56,6 +57,7 @@ export class HomeComponent implements OnInit {
           this.scrollElementsHeight+=300;
           setTimeout(() => {
             this.scrollElementsHeight-=300;
+             this.scrollAnimationWrapperHeight='block';
             console.log(this.scrollElementsHeight);
             this.cdr.detectChanges();
           }, 2000);
