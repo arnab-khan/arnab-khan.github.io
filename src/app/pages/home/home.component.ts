@@ -39,7 +39,6 @@ export class HomeComponent implements OnInit {
   windowInnerHeight = 0;
   skills: Skill[] = [];
   personalProject: PersonalProject[] = [];
-  pageHeight: string = '';
 
   constructor() {
     effect(() => {
@@ -91,10 +90,6 @@ export class HomeComponent implements OnInit {
         // console.log('home data', response);
         this.skills = response.skillApi;
         this.personalProject = response.personalProjectApi;
-        this.windowInnerHeight = window.innerHeight;
-        setTimeout(() => {
-          this.pageHeight = '100vh';
-        }, 0);
       },
       error: error => {
         console.error('error', error);
