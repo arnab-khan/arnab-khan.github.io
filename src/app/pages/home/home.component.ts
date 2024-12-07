@@ -64,6 +64,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     setTimeout(() => {
+      window.scrollTo({top:1})
       this.showscrollAnimationComponents = true;
     }, 0);
   }
