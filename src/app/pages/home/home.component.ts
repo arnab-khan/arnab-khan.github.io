@@ -52,12 +52,6 @@ export class HomeComponent implements OnInit {
           this.scrollAnimationWrapperElement = this.scrollAnimationWrapper.nativeElement;
           this.getScrollPersentage();
           this.totalScrollHeight = (this.scrollAnimationWrapperElement?.offsetHeight || 0) - this.windowInnerHeight;
-          setTimeout(() => {
-            document.body.style.zIndex = '1';
-            document.body.offsetHeight;
-            console.log('rerere');
-            
-          }, 2000);
         }, 0);
       }
     });
