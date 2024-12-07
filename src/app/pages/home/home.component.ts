@@ -60,9 +60,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.windowInnerHeight = window.innerHeight;
     this.getDataByApi();
-    setTimeout(() => {
-      this.pageHeight = '100vh';
-    }, 0);
   }
 
   @HostListener('window:scroll', [])
@@ -94,6 +91,10 @@ export class HomeComponent implements OnInit {
         // console.log('home data', response);
         this.skills = response.skillApi;
         this.personalProject = response.personalProjectApi;
+        this.windowInnerHeight = window.innerHeight;
+        setTimeout(() => {
+          this.pageHeight = '100vh';
+        }, 0);
       },
       error: error => {
         console.error('error', error);
