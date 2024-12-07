@@ -1,4 +1,4 @@
-import { afterNextRender, Component, effect, ElementRef, HostListener, inject, OnInit, ViewChild } from '@angular/core';
+import { afterNextRender, ChangeDetectorRef, Component, effect, ElementRef, HostListener, inject, OnInit, ViewChild } from '@angular/core';
 import { BannerComponent } from '../../sub-components/banner/banner.component';
 import { DataTransferService } from '../../services/data-transfer.service';
 import { CommonModule } from '@angular/common';
@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit {
   skills: Skill[] = [];
   personalProject: PersonalProject[] = [];
 
-  constructor() {
+  constructor(private cdr: ChangeDetectorRef) {
     effect(() => {
       this.headerHeight = this.dataTransferService.header()?.height || 0;
     })
@@ -53,10 +53,12 @@ export class HomeComponent implements OnInit {
           this.scrollAnimationWrapperElement = this.scrollAnimationWrapper.nativeElement;
           this.getScrollPersentage();
           this.totalScrollHeight = (this.scrollAnimationWrapperElement?.offsetHeight || 0) - this.windowInnerHeight;
-          this.scrollElementsHeight++;
+          this.scrollElementsHeight+=300;
           setTimeout(() => {
-            this.scrollElementsHeight--;
-          }, 0);
+            this.scrollElementsHeight-=300;
+            console.log(this.scrollElementsHeight);
+            this.cdr.detectChanges();
+          }, 2000);
         }, 0);
       }
     });
