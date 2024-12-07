@@ -1,4 +1,4 @@
-import { afterNextRender, AfterViewInit, Component, effect, ElementRef, HostListener, inject, OnInit, ViewChild } from '@angular/core';
+import { afterNextRender, Component, effect, ElementRef, HostListener, inject, OnInit, ViewChild } from '@angular/core';
 import { BannerComponent } from '../../sub-components/banner/banner.component';
 import { DataTransferService } from '../../services/data-transfer.service';
 import { CommonModule } from '@angular/common';
@@ -25,7 +25,7 @@ import { PersonalProjectComponent } from '../../sub-components/personal-project/
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent implements OnInit, AfterViewInit {
+export class HomeComponent implements OnInit {
 
   @ViewChild('scrollAnimationWrapper') scrollAnimationWrapper!: ElementRef;
 
@@ -39,7 +39,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
   windowInnerHeight = 0;
   skills: Skill[] = [];
   personalProject: PersonalProject[] = [];
-  showscrollAnimationComponents = false;
 
   constructor() {
     effect(() => {
@@ -58,15 +57,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
     });
   }
   ngOnInit(): void {
-    this.windowInnerHeight = window.innerHeight;
-    this.getDataByApi();
-  }
-
-  ngAfterViewInit(): void {
+    this.windowInnerHeight = window.innerHeight+1;
     setTimeout(() => {
-      window.scrollTo({top:1})
-      this.showscrollAnimationComponents = true;
+      this.windowInnerHeight = window.innerHeight;
     }, 0);
+    this.getDataByApi();
   }
 
   @HostListener('window:scroll', [])
