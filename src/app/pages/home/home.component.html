@@ -1,5 +1,6 @@
 <div #scrollAnimationWrapper class="scroll-animation-wrapper">
-    <div class="position-fixed w-100"
+    <div style="height: 50px;" class="bg-info"></div>
+    <div class="position-sticky w-100"
         [ngStyle]="{'top':headerHeight+'px', 'height':'calc(100vh - '+headerHeight+'px)'}">
         <app-about-me [scrollInformation]="{start:2, end:30, currentPosition:scrollInPersentage}"
             class="d-block position-absolute w-100 h-100 top-0 start-0"
