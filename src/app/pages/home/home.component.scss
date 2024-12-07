@@ -1,9 +1,11 @@
 :host {
     display: block;
     position: relative;
+    $gradientColor: rgb(252, 134, 134) 10%, rgb(106, 106, 253) 20%;
 
     .scroll-animation-wrapper {
         height: 1000vh;
+        background-image: repeating-radial-gradient(circle at right, $gradientColor);
 
         @media screen and (min-width: 768px) and (max-width: 991px) {
             height: 800vh;

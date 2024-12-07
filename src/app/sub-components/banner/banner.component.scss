@@ -19,7 +19,7 @@
         $gradientColor: rgb(252, 134, 134) 10%, rgb(106, 106, 253) 20%;
 
         .left {
-            background-image: repeating-radial-gradient(circle at right, $gradientColor), ;
+            background-image: repeating-radial-gradient(circle at right, $gradientColor);
 
             .image-wrap {
                 img {

@@ -57,10 +57,7 @@ export class HomeComponent implements OnInit {
     });
   }
   ngOnInit(): void {
-    this.windowInnerHeight = window.innerHeight+1;
-    setTimeout(() => {
-      this.windowInnerHeight = window.innerHeight;
-    }, 0);
+    this.windowInnerHeight = window.innerHeight;
     this.getDataByApi();
   }
 
@@ -93,9 +90,6 @@ export class HomeComponent implements OnInit {
         // console.log('home data', response);
         this.skills = response.skillApi;
         this.personalProject = response.personalProjectApi;
-        setTimeout(() => {
-          this.windowInnerHeight = window.innerHeight;
-        }, 0);
       },
       error: error => {
         console.error('error', error);
