@@ -1,6 +1,6 @@
 <div #scrollAnimationWrapper class="position-sticky top-0 scroll-animation-wrapper">
     <div class="position-sticky bg-light"
-        [ngStyle]="{'top':headerHeight+'px', 'height':'calc('+(pageHeight||windowInnerHeight)+' - '+headerHeight+'px)'}">
+        [ngStyle]="{'top':headerHeight+'px', 'height':'calc('+(pageHeight||(windowInnerHeight+'px'))+' - '+headerHeight+'px)'}">
         <app-about-me [scrollInformation]="{start:2, end:30, currentPosition:scrollInPersentage}"
             class="d-block position-absolute w-100 h-100 top-0 start-0"
             [ngClass]="{'pointer-events-none':(scrollInPersentage<2||scrollInPersentage>30)}">
