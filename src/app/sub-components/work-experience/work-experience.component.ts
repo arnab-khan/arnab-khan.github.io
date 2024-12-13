@@ -21,7 +21,7 @@ export class WorkExperienceComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes?.['scrollInformation']) {
-      this.scrollPersentage = this.scrollService.calculateAvaiableScrollPercentage(this.scrollInformation);
+      this.scrollPersentage = this.scrollService.calculateAvailableScrollPercentage(this.scrollInformation);
       if (this.scrollPersentage >= 90 && this.scrollPersentage <= 100) {
         this.contentOpecity = (1-this.setOpacity(90, 100));
       }
@@ -44,6 +44,6 @@ export class WorkExperienceComponent implements OnChanges {
   }
 
   setSize(minScrollPersentage: number, maxScrollPersentage: number): string {
-    return `${this.scrollService.setSizeInPersentage(minScrollPersentage, maxScrollPersentage, this.scrollPersentage)}%`;
+    return `${this.scrollService.setSizeInPercentage(minScrollPersentage, maxScrollPersentage, this.scrollPersentage)}%`;
   }
 }

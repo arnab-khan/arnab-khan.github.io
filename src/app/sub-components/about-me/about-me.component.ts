@@ -17,7 +17,7 @@ export class AboutMeComponent {
   scrollPersentage = 0;
   ngOnChanges(changes: SimpleChanges): void {
     if (changes?.['scrollInformation']) {
-      this.scrollPersentage = this.scrollService.calculateAvaiableScrollPercentage(this.scrollInformation);
+      this.scrollPersentage = this.scrollService.calculateAvailableScrollPercentage(this.scrollInformation);
     }
   }
 }

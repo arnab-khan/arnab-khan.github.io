@@ -24,7 +24,7 @@ export class SkillsComponent {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes?.['scrollInformation']) {
-      this.scrollPersentage = this.scrollService.calculateAvaiableScrollPercentage(this.scrollInformation);
+      this.scrollPersentage = this.scrollService.calculateAvailableScrollPercentage(this.scrollInformation);
       if (this.scrollPersentage <= 20) {
         this.sectionOpecity = this.setOpacity(0, 20);
       } else {
