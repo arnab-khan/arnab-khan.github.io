@@ -1,4 +1,4 @@
-<section class="bg-dark w-100 h-100">
+<section class="bg-dark w-100 h-100 text-break">
     <div class="container-1 pt-4 mx-auto position-relative text-white">
         <h2 class="font-abrilfatface-400-22 px-3 text-center">Personal Project</h2>
         <div class="py-4 py-md-5 px-3 px-sm-4 px-md-5">
@@ -12,8 +12,14 @@
                         </h3>
                         <div class="position-relative w-100 mt-3 image-wrap">
                             <div class="position-absolute top-0 start-0 h-100 w-100 image">
+                                @if (project.image.endsWith('.mp4')) {
+                                <video [src]="project.image" class="h-100 mw-100 w-auto mx-auto d-block" controls muted
+                                    loop playsinline>
+                                </video>
+                                } @else {
                                 <img [src]="project.image" [alt]="project.name"
                                     class="h-100 mw-100 w-auto mx-auto d-block">
+                                }
                             </div>
                         </div>
                         <div class="ps-3 mt-3 technologies">

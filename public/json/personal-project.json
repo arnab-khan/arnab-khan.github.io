@@ -1,17 +1,41 @@
 [
     {
-        "name": "Cards",
-        "image": "images/projects/cards.jpg",
+        "name": "Applab",
+        "image": "images/projects/app-lab.mp4",
         "Technologies": [
-            "HTML",
-            "SCSS",
-            "TypeScript",
-            "Webpack",
-            "Firebase"
+            "Angular",
+            "Angular SSR",
+            "Angular Material",
+            "Tailwind CSS",
+            "Spring Boot",
+            "Spring Security",
+            "STOMP WebSocket",
+            "MySQL",
+            "Redis",
+            "Nginx",
+            "PM2",
+            "GitHub Actions"
         ],
-        "live": "https://arnab-khan.github.io/typescript-project-setup/#card-list",
-        "sourceCode": "https://github.com/arnab-khan/typescript-project-setup",
-        "Description": "This is a single-page application developed without using any traditional frameworks or libraries. I implemented a custom single-page router. The application allows users to create, edit, and delete individual cards."
+        "live": "https://applab.arnabkhan.in/chat/global",
+        "sourceCode": "https://github.com/arnab-khan/applab-frontend",
+        "sourceCodeBackend": "https://github.com/arnab-khan/applab-backend",
+        "Description": "This application allows users to create accounts, manage profiles, upload profile images, and view public user profiles. It also includes a real-time global chat with live messages, typing indicators, reactions, quoted replies, and message editing or deletion."
+    },
+    {
+        "name": "Blog Application",
+        "image": "images/projects/public-blogs.jpg",
+        "Technologies": [
+            "MongoDB",
+            "Express.js",
+            "Angular",
+            "Node.js",
+            "NgRx",
+            "JWT"
+        ],
+        "live": "https://public-blogs.arnabkhan.in",
+        "sourceCode": "https://github.com/arnab-khan/public-blogs",
+        "sourceCodeBackend": "https://github.com/arnab-khan/public-blogs-backend",
+        "Description": "This is a public blog platform where users can create, edit, and delete blog posts after signing in. It also includes profile management and interactive features such as likes and comments."
     },
     {
         "name": "CSS Grid Tutorial",
@@ -26,5 +50,19 @@
         "live": "https://arnab-khan.github.io/css-grid",
         "sourceCode": "https://github.com/arnab-khan/css-grid",
         "Description": "This is a CSS tutorial focused on the grid layout system. It includes a search functionality and examples for each topic. Users can edit and execute example code in real-time using an integrated code editor."
+    },
+    {
+        "name": "Cards",
+        "image": "images/projects/cards.jpg",
+        "Technologies": [
+            "HTML",
+            "SCSS",
+            "TypeScript",
+            "Webpack",
+            "Firebase"
+        ],
+        "live": "https://arnab-khan.github.io/typescript-project-setup/#card-list",
+        "sourceCode": "https://github.com/arnab-khan/typescript-project-setup",
+        "Description": "This is a single-page application developed without using any traditional frameworks or libraries. I implemented a custom single-page router. The application allows users to create, edit, and delete individual cards."
     }
 ]
