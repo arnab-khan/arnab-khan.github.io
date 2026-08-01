@@ -12,8 +12,8 @@
         "logo": "images/skills/sass.svg"
     },
     {
-        "name": "Bootstrap",
-        "logo": "images/skills/bootstrap.svg"
+        "name": "Java",
+        "logo": "images/skills/java.svg"
     },
     {
         "name": "JavaScript",
@@ -25,10 +25,10 @@
     },
     {
         "name": "Angular",
-        "logo": "images/skills/angular.svg"
+        "logo": "images/skills/angular-new.svg"
     },
     {
-        "name": "Git",
-        "logo": "images/skills/git.svg"
+        "name": "Spring Boot",
+        "logo": "images/skills/spring-boot.svg"
     }
 ]
