@@ -19,7 +19,7 @@
         "live": "https://applab.arnabkhan.in/chat/global",
         "sourceCode": "https://github.com/arnab-khan/applab-frontend",
         "sourceCodeBackend": "https://github.com/arnab-khan/applab-backend",
-        "Description": "This application allows users to create accounts, manage profiles, upload profile images, and view public user profiles. It also includes a real-time global chat with live messages, typing indicators, reactions, quoted replies, and message editing or deletion."
+        "Description": "Built a social platform with user discovery, connections, and private and global real-time chat. Added typing indicators, replies, reactions, message editing, and unread alerts. Implemented sign-in, editable profiles, server-rendered public profiles, an AI navigation assistant, and a telemetry dashboard."
     },
     {
         "name": "Blog Application",
